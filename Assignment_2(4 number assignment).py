@@ -1,8 +1,8 @@
 def first_question():
-    name=str(input("Insert the last names and connect then with hypens"))
-    name=name.replace("-","")
-    out=[]
-    answer=""
+    name=str(input("Insert the last names and connect then with hypen"))
+    name=name.replace("-","")#For removing the hypen
+    out=[]#as a vessel to store the upperc case letter so it can be joined to a blank string
+    answer=""#a variable that later will be joined with the out
     for i in name:
         if i.isupper():
             out.append(i)
@@ -12,12 +12,17 @@ def first_question():
 def second_question():
     numlist=[]
     resultlist=[]
-    filterlist=[]
-    dupe=[]
+    filterlist=[]#To filter out the variety of the variables
+    dupe=[]#To filter the duplicates so it doesnt enter the filterlist
     modulo=42
     for i in range(10):
-        num=int(input("Insert a number for the list"))
-        numlist.append(num)
+        while True:
+            try:
+                num=int(input("Insert a number for the list"))
+                numlist.append(num)
+                break
+            except ValueError:
+                print("Reinsert value")
     for b in numlist:
         newvalue=b%modulo
         resultlist.append(newvalue)
@@ -29,7 +34,12 @@ def second_question():
     print("The variety is"+" "+str(filterlist))
 
 def third_question():
-    amount_of_games=int(input("Insert number of games you want"))
+    while True:
+        try:
+            amount_of_games=int(input("Insert number of games you want"))
+            break
+        except ValueError:
+            print("Reinsert the amount of games")
     stone_amount_list=[]
     odd_or_even_list=[]
     bob_win_amount_list=[]
@@ -39,7 +49,7 @@ def third_question():
         stone_amount_list.append(stone_amount)
     for z in stone_amount_list:
         odd_or_even=z%2
-        odd_or_even_list.append(odd_or_even)
+        odd_or_even_list.append(odd_or_even)#a list that is later used for filtering the odd and the even result
     for b in odd_or_even_list:
         if b==0:
             bob_win_amount_list.append("win")
@@ -66,17 +76,38 @@ def fourth_question():
         elif j=="C":
             a_cup,c_cup=c_cup,a_cup
     if a_cup[0]=="ball":
-        print("cup"+"1")
+        print("""
+        ------------------------
+        \                      /
+         \        CUP         /
+          \        1         /
+           \                /
+            ----------------
+            """)
     if b_cup[0]=="ball":
-        print(2)
+          print("""
+        ------------------------
+        \                      /
+         \        CUP         /
+          \        2         /
+           \                /
+            ----------------
+            """)
     if c_cup[0]=="ball":
-        print(3)
+          print("""
+        ------------------------
+        \                      /
+         \        CUP         /
+          \        3         /
+           \                /
+            ----------------
+            """)
 
 
 print("""
     ///////////////////////////////////////////////////////////////////////////////
-    //              Which question answer do you want to see 1,2,3,or 4          //
     //                                                                           //
+    //              Which question answer do you want to see 1,2,3,or 4          //
     //                                                                           //
     ///////////////////////////////////////////////////////////////////////////////
     """)
