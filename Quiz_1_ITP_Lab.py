@@ -34,16 +34,17 @@ while True:
                     if item_name!=b:
                         print("No item avaiable")
                         break
-                item_volume=int(input("Insert item volume"))
-                top_capacity=top_capacity+item_volume
-                if top_capacity>15 or top_capacity<=0:
-                    print("Reinsert Value")
-                    continue
-                top_list.update({item_name:item_volume})
-                for i in top_list.keys():
-                    new_top_list.setdefault(i,0)
-                    new_top_list[i]=new_top_list[i]-top_list.get(i)
-                print(new_top_list)
+                    else:
+                        item_volume=int(input("Insert item volume"))
+                        top_capacity=top_capacity+item_volume
+                        if top_capacity>15 or top_capacity<=0:
+                            print("Reinsert Value")
+                            continue
+                        top_list.update({item_name:item_volume})
+                        for i in top_list.keys():
+                            new_top_list.setdefault(i,0)
+                            new_top_list[i]=new_top_list[i]-top_list.get(i)
+                            print(new_top_list)
         elif input2=="Mid":
             put_or_take=str(input("Do you wanna put or take"))
             if put_or_take=="put":
