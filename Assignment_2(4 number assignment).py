@@ -18,7 +18,7 @@ def second_question():
     for i in range(10):
         while True:
             try:
-                num=int(input("Insert a number for the list"))
+                num=int(input("Insert a number for a list 10 times"))
                 numlist.append(num)
                 break
             except ValueError:
@@ -26,12 +26,13 @@ def second_question():
     for b in numlist:
         newvalue=b%modulo
         resultlist.append(newvalue)
-    print(resultlist)
+    print("the result of the modulo is"+str(resultlist))
     for z in resultlist:
         if z  not in dupe:
             filterlist.append(z)
             dupe.append(z)
-    print("The variety is"+" "+str(filterlist))
+    print("The output of the variety is"+" "+str(filterlist))
+    print("The sum of the variety in the output is"+" "+str(len(filterlist)))
 
 def third_question():
     while True:
