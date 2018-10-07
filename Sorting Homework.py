@@ -1,11 +1,11 @@
 import random
 def bubblesort(list1):
     listlenght=len(list1)-1
-    sorted=False
-    while not sorted:
+    z=0
+    while z<len(list1):
+        z+=1
         for b in range(listlenght):
             if list1[b]>list1[b+1]:
-                sorted=False
                 temp=list1[b]
                 list1[b]=list1[b+1]
                 list1[b+1]=temp
